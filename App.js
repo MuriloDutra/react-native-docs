@@ -8,12 +8,18 @@ import SaySomething from './components/SaySomething'
 import ImageExample from './components/ImageExample'
 import LotsOfGretting from './components/LotsOfGrettings'
 import Blink from './components/Blink'
+import LotsOfStyles from './components/LotsOfStyles'
+import FixedDimensionsBasics from './components/FixedDimensionsBasics'
+import FlexDimensionsBasics from './components/FlexDimensionsBasics'
+import FlexDirectionsBasics from './components/FlexDirectionsBasics'
+import JustifyContentBasics from './components/JustifyContentBasics'
+import AlignItemsBasics from './components/AlignItemsBasics'
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   return (
-      <Blink />
+      <AlignItemsBasics />
   );
 };
 

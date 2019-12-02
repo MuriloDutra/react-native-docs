@@ -1,21 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Component } from 'react'
 import SaySomething from './SaySomething'
+import { View } from 'react-native'
 
-const Blink = () => {
-    const [blinkState, setBlinkState] = useState(false)
-
-    useEffect(() => {
-        setInterval(() => {
-            blinkState == false ? setBlinkState(true) : setBlinkState(false)
-        }, 1500)
-    },[])
+export default class Blink extends Component { 
     
-    if (!blinkState) 
-        return null;
+    componentDidMount(){
+        setInterval(() => (
+            this.setState(previousState => (
+                { isShowingText: !previousState.isShowingText}
+            ))
+        ), 1000)
+    }
 
-    return (
-        <Text>{ props.text }</Text>
-    );
+    state = { isShowingText: true }
+
+    render(){
+        if (!this.state.isShowingText){
+            return null;
+        }
+
+        return (
+            <View style={{flex: 1, justifyContent:"center", alignItems:"center"}}>
+                <SaySomething text='Roubar caçapa'/>
+                <SaySomething text='U1000D'/>
+                <SaySomething text='Juliete Zika'/>
+            </View>
+        );
+    }
 }
-
-export default Blink
