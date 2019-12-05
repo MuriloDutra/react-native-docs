@@ -18,13 +18,14 @@ import AlignSelf from './components/AlignSelf'
 import AlignContent from './components/AlignContent'
 import Wrap from './components/Wrap'
 import PizzaTranslator from './components/PizzaTranslator'
+import ButtonBasics from './components/ButtonBasics'
 
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   return (
-      <PizzaTranslator />
+      <ButtonBasics />
   );
 };
 
