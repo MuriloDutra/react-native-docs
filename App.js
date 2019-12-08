@@ -21,13 +21,15 @@ import PizzaTranslator from './components/PizzaTranslator'
 import ButtonBasics from './components/ButtonBasics'
 import Touchables from './components/Touchables'
 import ScrollViewBasics from './components/ScrollViewBasics'
+import FlatListBasics from './components/FlatListBasics'
+import SectionListBasics from './components/SectionListBasics'
 
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
   return (
-      <ScrollViewBasics />
+      <SectionListBasics />
   );
 };
 
