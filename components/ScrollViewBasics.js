@@ -20,7 +20,7 @@ export default class ScrollViewBasics extends Component{
                 <Text style={{fontSize:96}}>Scroll me plz</Text>
                 <Image source={{uri: "https://facebook.github.io/react-native/img/tiny_logo.png", width: 64, height: 64}} />
                 <Image source={{uri: "https://facebook.github.io/react-native/img/tiny_logo.png", width: 64, height: 64}} />
-                <Image source={{uri: "https://facebook.github.io/react-native/img/tiny_logo.png", width: 64, height: 64}} />
+                <Image source={{uri: "https://facebook.github.io/react-njative/img/tiny_logo.png", width: 64, height: 64}} />
                 <Image source={{uri: "https://facebook.github.io/react-native/img/tiny_logo.png", width: 64, height: 64}} />
                 <Image source={{uri: "https://facebook.github.io/react-native/img/tiny_logo.png", width: 64, height: 64}} />
 
