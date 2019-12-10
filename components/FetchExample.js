@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { FlatList, ActivityIndicator, Text, View, StyleSheet, Platform } from 'react-native'
 
+import Button from './platforms/Button'
+
 export default class FetchExample extends Component {
     
     constructor(props){
@@ -60,6 +62,7 @@ export default class FetchExample extends Component {
                     renderItem={({item}) => <Text style={ styles.item }>{ item.title }, { item.releaseYear }</Text> }
                     keyExtractor={({id}, index) => id}
                 />
+                <Button></Button>
             </View>
         )
     }
