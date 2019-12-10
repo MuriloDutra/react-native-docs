@@ -1,32 +1,61 @@
 import React, { Component } from 'react'
-import { FlatList, ActivityIndicator, Text, View } from 'react-native'
+import { FlatList, ActivityIndicator, Text, View, StyleSheet, Platform } from 'react-native'
+import ComponentIOS from './ComponentIOS'
+import ComponentAndroid from './ComponentAndroid'
 
 export default class FetchExample extends Component {
-
+    
     constructor(props){
         super(props)
-        console.log('PROPS: ', props)
         this.state = { isLoading: true }
     }
 
-    componentDidMount(){
-        return fetch('https://facebook.github.io/react-native/movies.json')
-                    .then(response => response.json())
-                    .then(responseJson => {
-                        
-                        this.setState({
-                            isLoading: false,
-                            dataSource: responseJson.movies
-                        }, () => {})
-                    })
-                    .catch(error => {
-                        console.log('ERROR: ', error)
-                    })
+    async componentDidMount(){
+        let data = await getMoviesFromApi()
+        this.setState({
+            isLoading: false,
+            dataSource: data,
+        })
     }
 
     render(){
-        return (
+        if(this.state.isLoading){
+            return(
+                <View style={{flex: 1, padding: 20}}>
+                    <ActivityIndicator />
+                </View>
+            )
+        }
 
+        var Component = ''
+
+        Platform.OS === 'ios' ? Component = ComponentIOS : Component = ComponentAndroid
+
+        console.log(Component)
+
+        return(
+            <Component />
         )
     }
 }
+
+async function getMoviesFromApi() {
+    try {
+        let response = await fetch('https://facebook.github.io/react-native/movies.json');
+        let responseJson = await response.json();
+        return responseJson.movies;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+/**
+ * return fetch('https://facebook.github.io/react-native/movies.json')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.movies;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+ */
