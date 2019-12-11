@@ -12,11 +12,33 @@ export default class PizzaTranslator extends Component{
         this.state = { text: '' }
     }
 
-    render(){
-        const {navigate} = this.props.navigation
+    componentDidMount(){
+        alert('Bem vindo! O componente acabou de ser montado.')
+    }
 
+    componentDidUpdate(){
+        console.log('Componente foi atualizado')
+    }
+
+    componentWillUnmount(){
+        alert('Tchau, te vejo na próxima tela, pois o componente está sendo desmontado.')
+    }
+
+    /*shouldComponentUpdate(nextProps, nextState){
+        console.log('ATUAL: ', this.state.text)
+        console.log('ANTIGO: ', nextState.text)
+    }*/
+
+    takeToOtherPage(){
+        const {navigate} = this.props.navigation
+        navigate('Grettings', {name: 'Jane'})
+    }
+
+    render(){
+        let backgroundColor = this.props.backgroundColor
+        
         return (
-            <View style={{padding: 10}}>
+            <View style={{padding: 10, backgroundColor: backgroundColor, flex: 1}}>
                 <TextInput 
                     style={{height: 70, fontSize: 20}}
                     placeholder='Type here my friend...'
@@ -27,15 +49,18 @@ export default class PizzaTranslator extends Component{
                     {this.state.text.split(' ').map(word => word && '🍕').join(' ')}
                 </Text>
 
-                <TouchableOpacity onPress={() => navigate('Grettings', {name: 'Jane'}) } >
+                <TouchableOpacity onPress={() => this.takeToOtherPage() } >
                     <View style={ styles.button }>
                         <Text style={ styles.buttonText }>Send</Text>
                     </View>
                 </TouchableOpacity>
             </View>
         )
-    }
+    }  
 }
+
+PizzaTranslator.defaultProps = {
+    backgroundColor: 'azure'}
 
 const styles = StyleSheet.create({
     button: {
