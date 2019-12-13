@@ -25,6 +25,7 @@ import ScrollViewBasics from './components/ScrollViewBasics'
 import FlatListBasics from './components/FlatListBasics'
 import SectionListBasics from './components/SectionListBasics'
 import FetchExample from './components/FetchExample'
+import AnimatedButton from './components/Animation'
 
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -33,7 +34,7 @@ import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'rea
 import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
 
 const MainNavigator = createStackNavigator({
-  Home: {screen: PizzaTranslator},
+  Home: {screen: AnimatedButton},
   Grettings: {screen: LotsOfGretting},
 });
 
