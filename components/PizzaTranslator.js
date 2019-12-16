@@ -24,11 +24,6 @@ export default class PizzaTranslator extends Component{
         alert('Tchau, te vejo na próxima tela, pois o componente está sendo desmontado.')
     }
 
-    /*shouldComponentUpdate(nextProps, nextState){
-        console.log('ATUAL: ', this.state.text)
-        console.log('ANTIGO: ', nextState.text)
-    }*/
-
     takeToOtherPage(){
         const {navigate} = this.props.navigation
         navigate('Grettings', {name: 'Jane'})
