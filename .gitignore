@@ -1,4 +1,5 @@
 android/*
 node_modules/*
+ios/Pods
 ios/Pods/*
-ios/Podfile.lock
+ios/Podfile.lock.DS_Store
