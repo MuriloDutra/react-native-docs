@@ -27,17 +27,43 @@ import SectionListBasics from './components/SectionListBasics'
 import FetchExample from './components/FetchExample'
 import AnimatedButton from './components/Animation'
 import AnimationExample02 from './components/AnimationExample02'
+import Accessible from './components/Accessible'
 
+//NAVIGATION IMPORTS
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
+import { Navigation } from 'react-native-navigation'
 
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
 
+//REACT-NATIVE-NAVIGATION
+Navigation.registerComponent("ReactNativeNavigationV1.Accessible", () => Accessible)
+Navigation.registerComponent("ReactNativeNavigationV1.PizzaTranslator", () => PizzaTranslator)
+Navigation.registerComponent("ReactNativeNavigationV1.ImageExample",() => ImageExample)
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: "ReactNativeNavigationV1.Accessible",
+    title: "Home"
+  }
+})
+
+/*REACT-NAVIGATION
 const MainNavigator = createStackNavigator({
-  Home: {screen: AnimationExample02},
-  Grettings: {screen: LotsOfGretting},
-});
+  Home: {
+    screen: Accessible, 
+    navigationOptions: { title: 'Accessible S creen'} 
+  },
+  PizzaTranslator: {
+    screen: PizzaTranslator,
+    navigationOptions: { title: 'Speak pizza!' }
+  },
+  ImageExample: {
+    screen: ImageExample,
+    navigationOptions: { title: 'Captain Marvel' }
+  }
+});*/
 
 const App = createAppContainer(MainNavigator)
 

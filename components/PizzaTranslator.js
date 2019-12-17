@@ -26,7 +26,7 @@ export default class PizzaTranslator extends Component{
 
     takeToOtherPage(){
         const {navigate} = this.props.navigation
-        navigate('Grettings', {name: 'Jane'})
+        navigate('ImageExample')
     }
 
     render(){

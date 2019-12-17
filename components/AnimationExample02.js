@@ -17,7 +17,7 @@ export default class AnimationExample02 extends React.Component {
     }
 
     _onPress = () => {
-        //Animate the update
+        //Animate the update            
         LayoutAnimation.spring()
         this.setState({ width: this.state.width +15, height: this.state.height +15})
     }
