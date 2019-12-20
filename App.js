@@ -32,28 +32,14 @@ import Accessible from './components/Accessible'
 //NAVIGATION IMPORTS
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import { Navigation } from 'react-native-navigation'
 
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
 import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
 
-//REACT-NATIVE-NAVIGATION
-Navigation.registerComponent("ReactNativeNavigationV1.Accessible", () => Accessible)
-Navigation.registerComponent("ReactNativeNavigationV1.PizzaTranslator", () => PizzaTranslator)
-Navigation.registerComponent("ReactNativeNavigationV1.ImageExample",() => ImageExample)
-
-Navigation.startSingleScreenApp({
-  screen: {
-    screen: "ReactNativeNavigationV1.Accessible",
-    title: "Home"
-  }
-})
-
-/*REACT-NAVIGATION
 const MainNavigator = createStackNavigator({
   Home: {
     screen: Accessible, 
-    navigationOptions: { title: 'Accessible S creen'} 
+    navigationOptions: { title: 'Accessible Screen'} 
   },
   PizzaTranslator: {
     screen: PizzaTranslator,
@@ -63,7 +49,7 @@ const MainNavigator = createStackNavigator({
     screen: ImageExample,
     navigationOptions: { title: 'Captain Marvel' }
   }
-});*/
+});
 
 const App = createAppContainer(MainNavigator)
 

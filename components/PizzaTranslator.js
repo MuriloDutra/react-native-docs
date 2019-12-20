@@ -13,7 +13,7 @@ export default class PizzaTranslator extends Component{
     }
 
     componentDidMount(){
-        alert('Bem vindo! O componente acabou de ser montado.')
+        alert('Bem vindo! O componente PizzaTranslator acabou de ser montado.')
     }
 
     componentDidUpdate(){
@@ -21,7 +21,7 @@ export default class PizzaTranslator extends Component{
     }
 
     componentWillUnmount(){
-        alert('Tchau, te vejo na próxima tela, pois o componente está sendo desmontado.')
+        alert('Tchau, pois o componente PizzaTranslator está sendo desmontado.')
     }
 
     takeToOtherPage(){
