@@ -26,6 +26,7 @@ export default class FlatListBasics extends Component{
                         {key: 'Chris Evans'},
                       ]}
                     renderItem={ ({item}) => this._renderTextComponent(item.key)}
+                    maxToRenderPerBatch={ 10 }
                 >
                 </FlatList>
             </View>

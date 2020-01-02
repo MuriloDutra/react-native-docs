@@ -28,17 +28,21 @@ import FetchExample from './components/FetchExample'
 import AnimatedButton from './components/Animation'
 import AnimationExample02 from './components/AnimationExample02'
 import Accessible from './components/Accessible'
+import TextInputExample from './components/TextInputExample'
+import KeyboardExample from './components/KeyboardExample'
+import HitSlop from './components/HitSlop'
+import AndroidRipple from './components/AndroidRipple'
 
 //NAVIGATION IMPORTS
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
-import { Header, LearnMoreLinks, Colors,  DebugInstructions, ReloadInstructions } from 'react-native/Libraries/NewAppScreen';
+import { StyleSheet } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const MainNavigator = createStackNavigator({
   Home: {
-    screen: Accessible, 
+    screen: FlatListBasics, 
     navigationOptions: { title: 'Accessible Screen'} 
   },
   PizzaTranslator: {
