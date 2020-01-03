@@ -43,7 +43,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 const MainNavigator = createStackNavigator({
   Home: {
     screen: FlatListBasics, 
-    navigationOptions: { title: 'Accessible Screen'} 
+    navigationOptions: { title: 'Welcome Screen'} 
   },
   PizzaTranslator: {
     screen: PizzaTranslator,
